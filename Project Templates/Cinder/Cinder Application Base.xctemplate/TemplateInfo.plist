@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+	<key>Identifier</key>
+	<string>com.controlgroup.cinderApplicationBase</string>
+
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.objectiveCApplication</string>
+		<string>com.apple.dt.unit.macBase</string>
+		<string>com.apple.dt.unit.prefixable</string>
+	</array>
+
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Placeholder</key>
+			<string>None</string>
+			<key>Identifier</key>
+			<string>applicationCategory</string>
+			<key>Name</key>
+			<string>App Store Category</string>
+			<key>Description</key>
+			<string>The category for your application in the Mac App Store.</string>
+			<key>SpecialType</key>
+			<string>LSApplicationCategoryType</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Units</key>
+			<dict>
+				<key></key>
+				<array>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+							<key>___PACKAGENAME___-Info.plist:ApplicationCategory</key>
+							<string></string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+
+	<key>Project</key>
+	<dict>
+		<key>Configurations</key>
+		<dict>
+			<key>Release</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>i386</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvmgcc42</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>$(CINDER_PATH)/lib/libcinder.a</string>
+				<key>CINDER_PATH</key>
+				<string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>$(CINDER_PATH)/boost</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>../include $(CINDER_PATH)/include</string>
+			</dict>
+			<key>Debug</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>i386</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvmgcc42</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>$(CINDER_PATH)/lib/libcinder_d.a</string>
+				<key>CINDER_PATH</key>
+				<string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>$(CINDER_PATH)/boost</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>../include $(CINDER_PATH)/include</string>
+			</dict>
+		</dict>
+	</dict>
+
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>OtherFrameworks</key>
+			<array>
+			</array>
+			<key>Frameworks</key>
+			<array>
+				<string>Cocoa</string>
+				<string>AppKit</string>
+				<string>Foundation</string>
+				<string>Accelerate</string>
+				<string>AudioToolbox</string>
+				<string>AudioUnit</string>
+				<string>CoreAudio</string>
+				<string>QuickTime</string>
+				<string>QTKit</string>
+				<string>CoreVideo</string>
+				<string>Carbon</string>
+				<string>OpenGL</string>
+			</array>
+		</dict>
+	</array>
+
+
+	<key>Definitions</key>
+	<dict>
+		<key>main.m:main</key>
+		<dict></dict>
+
+		<key>src/___PACKAGENAMEASIDENTIFIER___App.cpp</key>
+		<dict>
+			<key>Group</key>
+			<string>Source</string>
+			<key>Path</key>
+			<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
+		</dict>
+
+		<key>include/Resources.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Headers</string>
+			<key>Path</key>
+			<string>include/Resources.h</string>
+		</dict>
+
+		<key>include/Constants.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Headers</string>
+			<key>Path</key>
+			<string>include/Constants.h</string>
+		</dict>
+
+		<key>en.lproj/CGCredits.rtf</key>
+		<dict>
+			<key>Path</key>
+			<string>CGCredits.rtf</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+
+		<key>en.lproj/Credits.rtf</key>
+		<dict>
+			<key>Path</key>
+			<string>Credits.rtf</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+
+
+		<key>___PACKAGENAME___-Info.plist:ApplicationCategory</key>
+		<string>&lt;key&gt;LSApplicationCategoryType&lt;/key&gt;
+&lt;string&gt;___VARIABLE_applicationCategory:XML___&lt;/string&gt;
+	</string>
+			<key>___PACKAGENAME___-Info.plist:Mac</key>
+			<string>&lt;key&gt;CFBundleIconFile&lt;/key&gt;
+&lt;string&gt;&lt;/string&gt;
+&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
+&lt;string&gt;1.0&lt;/string&gt;
+&lt;key&gt;LSMinimumSystemVersion&lt;/key&gt;
+&lt;string&gt;${MACOSX_DEPLOYMENT_TARGET}&lt;/string&gt;
+&lt;key&gt;CFBundleVersion&lt;/key&gt;
+&lt;string&gt;1&lt;/string&gt;
+&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;NSApplication&lt;/string&gt;
+</string>
+		</dict>
+
+
+	<key>Nodes</key>
+	<array>
+		<string>___PACKAGENAME___-Info.plist:Mac</string>
+		<string>___PACKAGENAME___-Info.plist:ApplicationCategory</string>
+		<string>___PACKAGENAME___-Info.plist:NSHumanReadableCopyright</string>
+		<string>en.lproj/CGCredits.rtf</string>
+		<string>en.lproj/Credits.rtf</string>
+		<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
+		<string>include/Resources.h</string>
+		<string>include/Constants.h</string>
+	</array>
+</dict>
+</plist>

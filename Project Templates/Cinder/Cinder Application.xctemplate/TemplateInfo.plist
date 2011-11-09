@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.cinderApplication</string>
+
+	<key>Concrete</key>
+	<true/>
+
+	<key>Description</key>
+	<string>This template builds a simple Cinder OpenGL application.</string>
+
+	<key>SortOrder</key>
+	<integer>2</integer>
+
+	<key>Ancestors</key>
+	<array>
+		<string>com.controlgroup.cinderApplicationBase</string>
+	</array>
+
+	<key>Definitions</key>
+	<dict>
+
+		<!-- <key>include/Resources.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Headers</string>
+			<key>Path</key>
+			<string>include/Resources.h</string>
+		</dict> -->
+
+	</dict>
+
+	<key>Nodes</key>
+	<array>
+		<!-- <string>include/Resources.h</string> -->
+	</array>
+
+</dict>
+</plist>
