@@ -28,7 +28,9 @@ void ___PACKAGENAMEASIDENTIFIER___App::mouseDown( MouseEvent event )
 
 void ___PACKAGENAMEASIDENTIFIER___App::keyDown( KeyEvent event )
 {
-	setFullScreen( !isFullScreen() );
+	if ( event.getCode() == KeyEvent::KEY_f ){
+		setFullScreen( !isFullScreen() );
+	}
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::update()
