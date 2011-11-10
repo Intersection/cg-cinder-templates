@@ -46,6 +46,30 @@
 				</array>
 			</dict>
 		</dict>
+
+        <!-- Combo Box (Create Node Key for Add New File) -->
+        <dict>
+            <key>Description</key>
+                <string>Description</string>
+            <key>Identifier</key>
+                <string>CINDER_PATH</string>
+            <key>Name</key>
+                <string>Location (local) of Cinder</string>
+            <key>NotPersisted</key>
+                <false/>
+            <key>Placeholder</key>
+                <string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+            <key>EmptyReplacement</key>
+                <string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+            <key>SpecialType</key>
+                <string></string>
+            <key>Type</key>
+                <string>text</string>
+        </dict>
+        <!-- Combo Box End -->
+
+
+
 	</array>
 
 	<key>Project</key>
@@ -61,7 +85,7 @@
 				<key>OTHER_LDFLAGS</key>
 				<string>$(CINDER_PATH)/lib/libcinder.a</string>
 				<key>CINDER_PATH</key>
-				<string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+				<string>___VARIABLE_CINDER_PATH___</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<string>$(CINDER_PATH)/boost</string>
 				<key>USER_HEADER_SEARCH_PATHS</key>
@@ -76,7 +100,7 @@
 				<key>OTHER_LDFLAGS</key>
 				<string>$(CINDER_PATH)/lib/libcinder_d.a</string>
 				<key>CINDER_PATH</key>
-				<string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+				<string>___VARIABLE_CINDER_PATH___</string>
 				<key>HEADER_SEARCH_PATHS</key>
 				<string>$(CINDER_PATH)/boost</string>
 				<key>USER_HEADER_SEARCH_PATHS</key>
@@ -139,7 +163,7 @@
 			<string>include/Constants.h</string>
 		</dict>
 
-		<key>en.lproj/CGCredits.rtf</key>
+		<key>CGCredits.rtf</key>
 		<dict>
 			<key>Path</key>
 			<string>CGCredits.rtf</string>
@@ -147,7 +171,7 @@
 			<string>Supporting Files</string>
 		</dict>
 
-		<key>en.lproj/Credits.rtf</key>
+		<key>Credits.rtf</key>
 		<dict>
 			<key>Path</key>
 			<string>Credits.rtf</string>
@@ -180,8 +204,8 @@
 		<string>___PACKAGENAME___-Info.plist:Mac</string>
 		<string>___PACKAGENAME___-Info.plist:ApplicationCategory</string>
 		<string>___PACKAGENAME___-Info.plist:NSHumanReadableCopyright</string>
-		<string>en.lproj/CGCredits.rtf</string>
-		<string>en.lproj/Credits.rtf</string>
+		<string>CGCredits.rtf</string>
+		<string>Credits.rtf</string>
 		<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
 		<string>include/Resources.h</string>
 		<string>include/Constants.h</string>
