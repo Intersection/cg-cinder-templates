@@ -1,9 +1,14 @@
 uniform sampler2D tex;
 
-void main()
+uniform vec3 mixColor;
+
+void main( void )
 {
+	vec3 sample;
 	vec2 st = gl_TexCoord[0].st;
-	vec4 sample = texture2D( tex, st );
-	gl_FragColor = sample;
+	sample = texture2D( tex, st ).rgb;
+	sample += mixColor;
+	gl_FragColor = vec4( sample, 1.0 );
+	
 }
 

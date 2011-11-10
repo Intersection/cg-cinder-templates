@@ -18,9 +18,10 @@ class ___PACKAGENAMEASIDENTIFIER___App : public AppBasic {
 	void setup();
 	void mouseDown( MouseEvent event );
 	void keyDown( KeyEvent event );
+	void resize( ResizeEvent event );
 	void update();
 	void draw();
-	
+
 	Capture			mCapture;
 	gl::Texture		mTexture;
 	gl::GlslProg	mShader;
@@ -48,8 +49,7 @@ void ___PACKAGENAMEASIDENTIFIER___App::setup()
 		exit(1);
 	}
 	
-	mTexture = gl::Texture( kCaptureWidth, kCaptureHeight );
-	mFbo = gl::Fbo( kWindowWidth, kWindowHeight );
+	mFbo = gl::Fbo( kCaptureWidth, kCaptureHeight );
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::mouseDown( MouseEvent event )
@@ -58,30 +58,42 @@ void ___PACKAGENAMEASIDENTIFIER___App::mouseDown( MouseEvent event )
 
 void ___PACKAGENAMEASIDENTIFIER___App::keyDown( KeyEvent event )
 {
-	setFullScreen( !isFullScreen() );
+	if (event.getCode() == KeyEvent::KEY_f ){
+		setFullScreen( !isFullScreen() );
+	}
 }
+
+void ___PACKAGENAMEASIDENTIFIER___App::resize( ResizeEvent event )
+{
+	mFbo = gl::Fbo( getWindowWidth(), getWindowHeight() );
+}
+
 
 void ___PACKAGENAMEASIDENTIFIER___App::update()
 {
-	if( mTexture && mCapture.checkNewFrame() ) mTexture.update( mCapture.getSurface() );
+	if( mCapture && mCapture.checkNewFrame() ) mTexture = gl::Texture( mCapture.getSurface() );
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::draw()
 {
 	// clear out the window with black
 	gl::clear( kClearColor ); 
-
+	
 	if( !mTexture ) return;
-
 	mFbo.bindFramebuffer();
-	mShader.bind();
 	mTexture.enableAndBind();
+	mShader.bind();
+	mShader.uniform( "tex", 0 );
+	mShader.uniform( "mixColor", Vec3d( 1.0, 0.5, -0.25 ) );
 	gl::drawSolidRect( getWindowBounds() );
 	mTexture.unbind();
 	mShader.unbind();
 	mFbo.unbindFramebuffer();
 	
-	gl::draw( mFbo.getTexture() );
+	gl::Texture fboTexture = mFbo.getTexture();
+	fboTexture.setFlipped();
+	gl::draw( fboTexture );
+	
 }
 
 
