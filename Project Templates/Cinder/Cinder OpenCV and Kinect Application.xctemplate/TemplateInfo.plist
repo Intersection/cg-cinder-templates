@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.cinderKinectOpenCVApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.controlgroup.cinderApplicationBase</string>
+	</array>
+
+	<key>Concrete</key>
+	<true/>
+
+	<key>Description</key>
+	<string>This template builds Cinder OpenGL application that uses a Kinect device along with OpenCV and loads a simple shader.</string>
+
+	<key>SortOrder</key>
+	<integer>2</integer>
+
+	<key>Project</key>
+	<dict>
+		<key>Configurations</key>
+		<dict>
+			<key>Release</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>i386</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvmgcc42</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>$(CINDER_PATH)/lib/libcinder.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a</string>
+				<key>CINDER_PATH</key>
+				<string>___VARIABLE_CINDER_PATH___</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>$(CINDER_PATH)/boost</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>../include $(CINDER_PATH)/include $(CINDER_PATH)/blocks/Cinder-Kinect/include $(CINDER_PATH)/blocks/Cinder-OpenCV/include</string>
+			</dict>
+			<key>Debug</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>i386</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvmgcc42</string>
+				<key>OTHER_LDFLAGS</key>
+				<string>$(CINDER_PATH)/lib/libcinder_d.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a</string>
+				<key>CINDER_PATH</key>
+				<string>___VARIABLE_CINDER_PATH___</string>
+				<key>HEADER_SEARCH_PATHS</key>
+				<string>$(CINDER_PATH)/boost</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>../include $(CINDER_PATH)/include $(CINDER_PATH)/blocks/Cinder-Kinect/include $(CINDER_PATH)/blocks/Cinder-OpenCV/include</string>
+			</dict>
+		</dict>
+	</dict>
+
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>Frameworks</key>
+			<array>
+				<string>IOKit</string>
+			</array>
+		</dict>
+	</array>
+
+
+	<key>Definitions</key>
+	<dict>
+		<key>resources/shaders/passthru.vsh</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Shaders</string>
+			</array>
+			<key>Path</key>
+			<string>resources/shaders/passthru.vsh</string>
+		</dict>
+		<key>resources/shaders/shader.fsh</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Shaders</string>
+			</array>
+			<key>Path</key>
+			<string>resources/shaders/shader.fsh</string>
+		</dict>
+		<key>src/___PACKAGENAMEASIDENTIFIER___App.cpp</key>
+		<dict>
+			<key>Group</key>
+			<string>Source</string>
+			<key>Path</key>
+			<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
+		</dict>
+		<key>include/Resources.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Headers</string>
+			<key>Path</key>
+			<string>include/Resources.h</string>
+		</dict>
+		<key>include/Constants.h</key>
+		<dict>
+			<key>Group</key>
+			<string>Headers</string>
+			<key>Path</key>
+			<string>include/Constants.h</string>
+		</dict>
+		<key>CGCredits.rtf</key>
+		<dict>
+			<key>Path</key>
+			<string>CGCredits.rtf</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+		<key>Credits.rtf</key>
+		<dict>
+			<key>Path</key>
+			<string>Credits.rtf</string>
+			<key>Group</key>
+			<string>Supporting Files</string>
+		</dict>
+
+		<key>src/Kinect.cpp</key>
+		<dict>
+			<key>Path</key>
+			<string>src/Kinect.cpp</string>
+			<key>Group</key>
+			<string>Source</string>
+		</dict>
+
+	</dict>
+	<key>Nodes</key>
+	<array>
+		<string>CGCredits.rtf</string>
+		<string>Credits.rtf</string>
+		<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
+		<string>include/Resources.h</string>
+		<string>include/Constants.h</string>
+		<string>resources/shaders/passthru.vsh</string>
+		<string>resources/shaders/shader.fsh</string>
+		<string>src/Kinect.cpp</string>
+
+	</array>
+</dict>
+</plist>
