@@ -10,7 +10,8 @@ It currently includes project types for:
 * Basic Cinder app with Constants and Resources files, plus (theoretical) support for (Cocoa) internationalization.
 * Basic app with Capture (ie, webcam) support, along with a simple GLSL shader set.
 * Basic app with Kinect support, along with a simple GLSL shader set.
-
+* Cinder app with Capture (ie, webcam) support, along with OpenCV and a simple GLSL shader set.
+* Cinder app with Kinect support, along with OpenCV and a simple GLSL shader set.
 
 File templates exist for:
 
@@ -27,7 +28,7 @@ Obviously, this is only for Mac (soon, iOS) development with Cinder.
 
 Clone this repo to ~/Library/Developer/Xcode/Templates/ - this will likely cause conflicts with any other templates you have created in that location - untested.
 
-NOTE ON KINECT TEMPLATE
+NOTE ON KINECT TEMPLATES
 --------------------------
 
 The Kinect.cpp file has been included in this distro from the block source at http://github.com/cinder/Cinder-Kinect - you have to install the block before creating a Kinect project. 
@@ -41,3 +42,11 @@ There is a risk of version drift if that project moves forward, after your proje
 If anyone knows how to add it as a (linked) source file at project-creation time (as CINDER_PATH is a derived value, and not absolute, it's hard), please push a change.
 
 Alternately, copying it at build-time would be ideal...
+
+NOTE ON OPENCV TEMPLATES
+--------------------------
+You need to install the Cinder-OpenCV block at http://github.com/cinder/Cinder-OpenCV
+You can do so by:
+
+	cd (YOUR_CINDER_DIR)/blocks
+	git clone https://github.com/cinder/Cinder-OpenCV.git
