@@ -166,6 +166,30 @@
 		<key>main.m:main</key>
 		<dict></dict>
 
+		<key>resources/shaders/passthru.vsh</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Shaders</string>
+			</array>
+
+			<key>Path</key>
+			<string>resources/shaders/passthru.vsh</string>
+		</dict>
+
+		<key>resources/shaders/shader.fsh</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Shaders</string>
+			</array>
+
+			<key>Path</key>
+			<string>resources/shaders/shader.fsh</string>
+		</dict>
+
 		<key>src/___PACKAGENAMEASIDENTIFIER___App.cpp</key>
 		<dict>
 			<key>Group</key>
@@ -256,6 +280,8 @@
 		<string>src/___PACKAGENAMEASIDENTIFIER___App.cpp</string>
 		<string>include/Resources.h</string>
 		<string>include/Constants.h</string>
+		<string>resources/shaders/passthru.vsh</string>
+		<string>resources/shaders/shader.fsh</string>
 	</array>
 </dict>
 </plist>
