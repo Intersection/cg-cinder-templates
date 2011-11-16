@@ -30,6 +30,14 @@ Clone this repo to ~/Library/Developer/Xcode/Templates/ - this will likely cause
 NOTE ON KINECT TEMPLATE
 --------------------------
 
-The Kinect.cpp file has been included in this distro from the block source at http://github.com/cinder/Cinder-Kinect
+The Kinect.cpp file has been included in this distro from the block source at http://github.com/cinder/Cinder-Kinect - you have to install the block before creating a Kinect project. 
 
-There is a risk of version drift if that project moves forward. If anyone knows how to add it as a Source file at project-creation time (as CINDER_PATH is a derived value, and not absolute, it's hard), please push a change.
+You can do so by:
+
+	cd (YOUR_CINDER_DIR)/blocks
+	git clone https://github.com/cinder/Cinder-Kinect.git
+
+There is a risk of version drift if that project moves forward, after your project is created. You can always manually copy an updated version.
+If anyone knows how to add it as a (linked) source file at project-creation time (as CINDER_PATH is a derived value, and not absolute, it's hard), please push a change.
+
+Alternately, copying it at build-time would be ideal...
