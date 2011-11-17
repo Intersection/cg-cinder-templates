@@ -1,5 +1,4 @@
 uniform sampler2D tex;
-
 uniform vec3 mixColor;
 
 void main( void )

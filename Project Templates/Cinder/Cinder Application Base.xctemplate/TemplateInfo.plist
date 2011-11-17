@@ -166,6 +166,18 @@
 		<key>main.m:main</key>
 		<dict></dict>
 
+		<key>resources/images/rg_grad.png</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Images</string>
+			</array>
+
+			<key>Path</key>
+			<string>resources/images/rg_grad.png</string>
+		</dict>
+
 		<key>resources/shaders/passthru.vsh</key>
 		<dict>
 			<key>Group</key>
@@ -271,7 +283,6 @@
 		<string>___PACKAGENAME___-Info.plist:Basics</string>
 		<string>___PACKAGENAME___-Prefix.pch:Availability</string>
 		<string>___PACKAGENAME___-Prefix.pch:objC:importCocoa</string>
-		
 		<string>___PACKAGENAME___-Info.plist:Mac</string>
 		<string>___PACKAGENAME___-Info.plist:ApplicationCategory</string>
 		<string>___PACKAGENAME___-Info.plist:NSHumanReadableCopyright</string>
@@ -282,6 +293,7 @@
 		<string>include/Constants.h</string>
 		<string>resources/shaders/passthru.vsh</string>
 		<string>resources/shaders/shader.fsh</string>
+		<string>resources/images/rg_grad.png</string>
 	</array>
 </dict>
 </plist>

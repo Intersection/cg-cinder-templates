@@ -3,6 +3,9 @@
 #include "cinder/gl/GlslProg.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/Fbo.h"
+#include "cinder/ImageIo.h"
+
+#include "cinder/params/Params.h"
 
 #include "Resources.h"
 #include "Constants.h"
@@ -13,17 +16,29 @@ using namespace std;
 
 class ___PACKAGENAMEASIDENTIFIER___App : public AppBasic {
   public:
+	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseDown( MouseEvent event );
 	void keyDown( KeyEvent event );
+	void resize( ResizeEvent event );
 	void update();
 	void draw();
 
-	gl::Texture		mTexture;
-	gl::GlslProg	mShader;
-	gl::Fbo			mFbo;
+	gl::Texture				mTexture;
+	gl::GlslProg			mShader;
+	gl::Fbo					mFbo;
+	params::InterfaceGl		mParams;
+
+	float mMixColorRed;
+	float mMixColorGreen;
+	float mMixColorBlue;
 
 };
+
+void ___PACKAGENAMEASIDENTIFIER___App::prepareSettings( Settings *settings )
+{
+	settings->setFrameRate( kFrameRate );
+}
 
 void ___PACKAGENAMEASIDENTIFIER___App::setup()
 {
@@ -38,7 +53,16 @@ void ___PACKAGENAMEASIDENTIFIER___App::setup()
 	}
 
 	mFbo = gl::Fbo( kWindowWidth, kWindowHeight );
-	mTexture = gl::Texture( kWindowWidth, kWindowHeight );
+	try {
+		mTexture = gl::Texture( loadImage( loadResource( RES_GRADIENT ) ) );
+	}catch ( Exception &exc ){
+		console() << "Cannot load texture: " << exc.what() << std::endl;
+	}
+
+	mParams = params::InterfaceGl( "Parameters", Vec2i( kParamsWidth, kParamsHeight ) );
+	mParams.addParam( "Mix Red", &mMixColorRed, "min=-1.0 max=1.0 step=0.01 keyIncr=r keyDecr=R" );
+	mParams.addParam( "Mix Green", &mMixColorGreen, "min=-1.0 max=1.0 step=0.01 keyIncr=g keyDecr=G" );
+	mParams.addParam( "Mix Blue", &mMixColorBlue, "min=-1.0 max=1.0 step=0.01 keyIncr=b keyDecr=B" );
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::mouseDown( MouseEvent event )
@@ -52,22 +76,29 @@ void ___PACKAGENAMEASIDENTIFIER___App::keyDown( KeyEvent event )
 	}
 }
 
+void ___PACKAGENAMEASIDENTIFIER___App::resize( ResizeEvent event )
+{
+	mFbo = gl::Fbo( getWindowWidth(), getWindowHeight() );
+}
+
+
 void ___PACKAGENAMEASIDENTIFIER___App::update()
 {
+	// Do something with your texture here.
 	
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::draw()
 {
 	// clear out the window with black
-	gl::clear( kClearColor ); 
+	gl::clear( kClearColor );
 	
 	if( !mTexture ) return;
 	mFbo.bindFramebuffer();
 	mTexture.enableAndBind();
 	mShader.bind();
 	mShader.uniform( "tex", 0 );
-	mShader.uniform( "mixColor", Vec3d( 1.0, 0.5, -0.25 ) );
+	mShader.uniform( "mixColor", Vec3d( mMixColorRed, mMixColorGreen, mMixColorBlue ) );
 	gl::drawSolidRect( getWindowBounds() );
 	mTexture.unbind();
 	mShader.unbind();
@@ -76,6 +107,8 @@ void ___PACKAGENAMEASIDENTIFIER___App::draw()
 	gl::Texture fboTexture = mFbo.getTexture();
 	fboTexture.setFlipped();
 	gl::draw( fboTexture );
+
+	params::InterfaceGl::draw();
 }
 
 
