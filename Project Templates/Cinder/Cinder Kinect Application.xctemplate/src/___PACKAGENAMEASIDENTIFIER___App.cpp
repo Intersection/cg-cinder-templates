@@ -6,6 +6,8 @@
 #include "cinder/Surface.h"
 #include "cinder/Utilities.h"
 
+#include "cinder/params/Params.h"
+
 #include "Kinect.h"
 
 #include "Resources.h"
@@ -17,6 +19,7 @@ using namespace std;
 
 class ___PACKAGENAMEASIDENTIFIER___App : public AppBasic {
   public:
+	void prepareSettings( Settings *settings );
 	void setup();
 	void mouseDown( MouseEvent event );
 	void keyDown( KeyEvent event );
@@ -24,12 +27,24 @@ class ___PACKAGENAMEASIDENTIFIER___App : public AppBasic {
 	void update();
 	void draw();
 
-	Kinect			mKinect;
-	gl::Texture		mTexture;
-	gl::GlslProg	mShader;
-	gl::Fbo			mFbo;
+	Kinect					mKinect;
+	gl::Texture				mTexture;
+	gl::GlslProg			mShader;
+	gl::Fbo					mFbo;
+
+	params::InterfaceGl		mParams;
+
+	float mMixColorRed;
+	float mMixColorGreen;
+	float mMixColorBlue;
+	
 
 };
+
+void ___PACKAGENAMEASIDENTIFIER___App::prepareSettings( Settings *settings )
+{
+	settings->setFrameRate( kFrameRate );
+}
 
 void ___PACKAGENAMEASIDENTIFIER___App::setup()
 {
@@ -59,7 +74,16 @@ void ___PACKAGENAMEASIDENTIFIER___App::setup()
 		exit(1);
 	}
 	
-	mFbo = gl::Fbo( kCaptureWidth, kCaptureHeight );
+	mFbo = gl::Fbo( kWindowWidth, kWindowHeight );
+
+	mMixColorRed = 0.0f;
+	mMixColorGreen = 0.0f;
+	mMixColorBlue = 0.0f;
+
+	mParams = params::InterfaceGl( "Parameters", Vec2i( kParamsWidth, kParamsHeight ) );
+	mParams.addParam( "Mix Red", &mMixColorRed, "min=-1.0 max=1.0 step=0.01 keyIncr=r keyDecr=R" );
+	mParams.addParam( "Mix Green", &mMixColorGreen, "min=-1.0 max=1.0 step=0.01 keyIncr=g keyDecr=G" );
+	mParams.addParam( "Mix Blue", &mMixColorBlue, "min=-1.0 max=1.0 step=0.01 keyIncr=b keyDecr=B" );
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::mouseDown( MouseEvent event )
@@ -100,7 +124,7 @@ void ___PACKAGENAMEASIDENTIFIER___App::draw()
 	mTexture.enableAndBind();
 	mShader.bind();
 	mShader.uniform( "tex", 0 );
-	mShader.uniform( "mixColor", Vec3d( 1.0, 0.5, -0.25 ) );
+	mShader.uniform( "mixColor", Vec3d( mMixColorRed, mMixColorGreen, mMixColorBlue ) );
 	gl::drawSolidRect( getWindowBounds() );
 	mTexture.unbind();
 	mShader.unbind();
@@ -109,6 +133,8 @@ void ___PACKAGENAMEASIDENTIFIER___App::draw()
 	gl::Texture fboTexture = mFbo.getTexture();
 	fboTexture.setFlipped();
 	gl::draw( fboTexture );
+
+	params::InterfaceGl::draw();
 	
 }
 

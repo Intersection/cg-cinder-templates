@@ -59,6 +59,10 @@ void ___PACKAGENAMEASIDENTIFIER___App::setup()
 		console() << "Cannot load texture: " << exc.what() << std::endl;
 	}
 
+	mMixColorRed = 0.0f;
+	mMixColorGreen = 0.0f;
+	mMixColorBlue = 0.0f;
+	
 	mParams = params::InterfaceGl( "Parameters", Vec2i( kParamsWidth, kParamsHeight ) );
 	mParams.addParam( "Mix Red", &mMixColorRed, "min=-1.0 max=1.0 step=0.01 keyIncr=r keyDecr=R" );
 	mParams.addParam( "Mix Green", &mMixColorGreen, "min=-1.0 max=1.0 step=0.01 keyIncr=g keyDecr=G" );

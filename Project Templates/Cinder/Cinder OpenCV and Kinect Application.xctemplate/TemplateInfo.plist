@@ -31,7 +31,7 @@
 				<key>GCC_VERSION</key>
 				<string>com.apple.compilers.llvmgcc42</string>
 				<key>OTHER_LDFLAGS</key>
-				<string>$(CINDER_PATH)/lib/libcinder.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a</string>
+				<string>$(CINDER_PATH)/lib/libcinder.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_core.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_calib3d.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_contrib.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_features2d.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_flann.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_gpu.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_haartraining_engine.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_legacy.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_ml.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_objdetect.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_video.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_imgproc.a</string>
 				<key>CINDER_PATH</key>
 				<string>___VARIABLE_CINDER_PATH___</string>
 				<key>HEADER_SEARCH_PATHS</key>
@@ -46,7 +46,7 @@
 				<key>GCC_VERSION</key>
 				<string>com.apple.compilers.llvmgcc42</string>
 				<key>OTHER_LDFLAGS</key>
-				<string>$(CINDER_PATH)/lib/libcinder_d.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a</string>
+				<string>$(CINDER_PATH)/lib/libcinder_d.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libfreenect.a $(CINDER_PATH)/blocks/Cinder-Kinect/lib/macosx/libusb-1.0.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_core.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_calib3d.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_contrib.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_features2d.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_flann.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_gpu.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_haartraining_engine.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_legacy.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_ml.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_objdetect.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_video.a $(CINDER_PATH)/blocks/Cinder-OpenCV/lib/macosx/libopencv_imgproc.a</string>
 				<key>CINDER_PATH</key>
 				<string>___VARIABLE_CINDER_PATH___</string>
 				<key>HEADER_SEARCH_PATHS</key>
