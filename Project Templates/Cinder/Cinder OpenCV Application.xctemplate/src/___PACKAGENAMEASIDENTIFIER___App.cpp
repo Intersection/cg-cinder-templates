@@ -43,6 +43,7 @@ public:
 void ___PACKAGENAMEASIDENTIFIER___App::prepareSettings( Settings *settings )
 {
 	settings->setFrameRate( kFrameRate );
+	settings->setWindowSize( kWindowWidth, kWindowHeight );
 }
 
 void ___PACKAGENAMEASIDENTIFIER___App::setup()
