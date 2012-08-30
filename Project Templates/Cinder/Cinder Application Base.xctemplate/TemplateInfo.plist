@@ -58,9 +58,9 @@
             <key>NotPersisted</key>
                 <false/>
             <key>Placeholder</key>
-                <string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+                <string>/Users/$(USER)/SDKs/cinder_0.8.4_mac</string>
             <key>EmptyReplacement</key>
-                <string>/Users/$(USER)/SDKs/cinder_0.8.3_mac</string>
+                <string>/Users/$(USER)/SDKs/cinder_0.8.4_mac</string>
             <key>SpecialType</key>
                 <string></string>
             <key>Type</key>
