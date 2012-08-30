@@ -26,7 +26,8 @@ These are based on a set of stylistic conventions we use at Control Group, which
 
 Obviously, this is only for Mac (soon, iOS) development with Cinder.
 
-Clone this repo to ~/Library/Developer/Xcode/Templates/ - this will likely cause conflicts with any other templates you have created in that location - untested.
+Create the folder: ~/Library/Developer/Xcode/Templates/ and cd to that folder.
+Clone this repo to ~/Library/Developer/Xcode/Templates/ so it lives in ~/Library/Developer/Xcode/Templates/CinderTemplates.
 
 NOTE ON KINECT TEMPLATES
 --------------------------
